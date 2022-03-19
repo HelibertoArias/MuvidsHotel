@@ -49,8 +49,9 @@ public class ExceptionHandlerMiddleware
                 break;
             case RegisterUserException registerUserException:
                 httpStatusCode = HttpStatusCode.BadRequest;
-
-                
+                break;            
+            case ConflictBookingException bookingException:
+                httpStatusCode = HttpStatusCode.Conflict;
                 break;
             case Exception ex:
                 httpStatusCode = HttpStatusCode.BadRequest;

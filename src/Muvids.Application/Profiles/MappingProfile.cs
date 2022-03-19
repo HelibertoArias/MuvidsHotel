@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Muvids.Application.Features.Bookings.Commands.CreateBooking;
 using Muvids.Application.Features.Movies.Commands.CreateMovie;
 using Muvids.Application.Features.Movies.Commands.UpdateMovie;
 using Muvids.Application.Features.Movies.Queries.GetMoviesList;
@@ -17,21 +18,10 @@ public class MappingProfile : Profile
 
         CreateMap<UpdateMovieCommand, Movie>();
 
-
-        //CreateMap<Event, EventListVm>().ReverseMap();
-        //CreateMap<Event, CreateEventCommand>().ReverseMap();
-        //CreateMap<Event, UpdateEventCommand>().ReverseMap();
-        //CreateMap<Event, EventDetailVm>().ReverseMap();
-        //CreateMap<Event, CategoryEventDto>().ReverseMap();
-        //CreateMap<Event, EventExportDto>().ReverseMap();
-
-        //CreateMap<Category, CategoryDto>();
-        //CreateMap<Category, CategoryListVm>();
-        //CreateMap<Category, CategoryEventListVm>();
-        //CreateMap<Category, CreateCategoryCommand>();
-        //CreateMap<Category, CreateCategoryDto>();
-
-        //CreateMap<Order, OrdersForMonthDto>();
+        CreateMap<CreateBookingCommand,Booking>();
+        CreateMap<Booking, CreateBookingDto>();
+   
+        //CreateMap<Booking, UpdteBookingDto>();
     }
 }
 

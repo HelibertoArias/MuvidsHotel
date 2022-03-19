@@ -14,7 +14,7 @@ public static class PersistenceServiceRegistration
     public static IServiceCollection AddPersistenceServices(this IServiceCollection services,
                                                             IConfiguration configuration)
     {
-        var stringConnection = "MuvidsConnectionString";
+        var stringConnection = "MuvidsHotelConnectionString";
         var connectionConfiguration = configuration.GetConnectionString(stringConnection);
         if (connectionConfiguration == null)
         {
@@ -31,6 +31,7 @@ public static class PersistenceServiceRegistration
 
         // Other repositories
         services.AddScoped<IMovieRepository, MovieRepository>();
+        services.AddScoped<IBookingRepository, BookingRepository>();
 
 
         return services;
