@@ -25,12 +25,7 @@ public static class PersistenceServiceRegistration
             options.UseSqlServer(connectionConfiguration)
         );
 
-
-        // Base repository
-        services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
-
-        // Other repositories
-        services.AddScoped<IMovieRepository, MovieRepository>();
+        // Repositories
         services.AddScoped<IBookingRepository, BookingRepository>();
 
 

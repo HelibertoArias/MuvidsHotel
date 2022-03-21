@@ -164,7 +164,7 @@ try
         if (context.Database.IsRelational())
         {
             context.Database.Migrate();
-            await Seed.SeedMovies(context);
+            await Seed.SeedBookings(context);
         }
     }
 

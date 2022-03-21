@@ -22,6 +22,13 @@ public class BookingRepository : BaseRepository<Booking>, IBookingRepository
                     .ToListAsync();
     }
 
+    public async Task<IReadOnlyList<Booking>> ListAllByUserAsync(string userId)
+    {
+        return (await ListAllAsync())
+                    .Where(booking => booking.CreatedBy == userId)
+                    .ToList();                     
+    }
+
     public async Task<bool> HasBookingConflictsAsync(Booking booking)
     {
         var bookings = await ListAllAsync();

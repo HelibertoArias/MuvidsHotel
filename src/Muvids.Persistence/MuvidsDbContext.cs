@@ -12,7 +12,7 @@ public class MuvidsDbContext : DbContext
 {
     private readonly ILoggedInUserService _loggedInUserService;
 
-    public DbSet<Movie> Movies { get; set; }
+    
     public DbSet<Booking> Bookings { get; set; }
     public DbSet<Room> Room { get; set; }
 

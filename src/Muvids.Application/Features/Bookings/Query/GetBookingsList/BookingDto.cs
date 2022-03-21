@@ -1,6 +1,6 @@
-﻿namespace Muvids.Application.Profiles;
+﻿namespace Muvids.Application.Features.Bookings.Query.GetBookingsList;
 
-public class UpdteBookingDto
+public class BookingDto
 {
     public Guid Id { get; set; }
 
