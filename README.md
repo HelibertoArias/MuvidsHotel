@@ -130,7 +130,7 @@ Here some screenshots.
 
 
  
-   - After a seconds you should the test result all passed.
+   - After a seconds you should see all test pass.
 
    <br />
    <img src="images/postman-after-runs-collection.jpg" alt="Logo" width="900" >
@@ -146,13 +146,6 @@ Here some screenshots.
 
  
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
- 
- 
-
- 
-
 
 
 <!-- CONTACT -->
