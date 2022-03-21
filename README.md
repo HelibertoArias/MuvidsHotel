@@ -44,7 +44,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is a Web API for handling user and reservations in the Muvids hotel.
+This is a Web API for handling users and reservations in the Muvids hotel.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -93,18 +93,21 @@ _To start using the application you should._
    ```
 2. Open the solution MuvidsHotel.sln and build to restore the Nuget Packages.
 3. Set the project Muvids.Web.API as startup project.
-4. Open the file ./Muvids.Web.API/appsettings.json and update the user and password. This API use two databases, one called Muvids for the application and other called MuvidsIdentity for the users.
+4. Open the file ./Muvids.Web.API/appsettings.json and update the user and password. This API use two databases, one called MuvidsHotel for the application and other called MuvidsIdentity for the users.
     ```json
     "ConnectionStrings": {
       "MuvidsHotelConnectionString": "Server=localhost;Database=MuvidsHotel;User Id=<user>;Password=<password>",
       "MuvidsIdentityConnectionString": "Server=localhost;Database=MuvidsIdentity;User Id=<user>;password=<password>" }
      ```
-5. In VS 2020 open a new terminal and create the database for the application and the users.
+5. In VS 2020 open a new terminal Package Manager Console, select as defaul project *src\Infrastructure\Muvids.Persistence* and create the database for the application.
     ```cmd
     Update-Database -Context MuvidsDbContext
+     ```
+6. Now, for the user's database, in the same terminal, select *src\Infrastructure\Muvids.Identity* and run the following command.
+    ```cmd
     Update-Database -Context MuvidsIdentityDbContext
      ```
-6. After this you can run the application. The Swagger page will show up
+6. After this you can run the application. The Swaggepage will show up
  [https://localhost:7098/swagger/index.html](https://localhost:7098/swagger/index.html)
 
 
@@ -131,6 +134,15 @@ Here some screenshots.
 
    <br />
    <img src="images/postman-after-runs-collection.jpg" alt="Logo" width="900" >
+
+   - Notes: By default, only one room was created, the id for it is "c9d4c053-49b6-410c-bc78-2d54a9991850". This roomId will be required to add a new booking. Be aware that you will need to update the fields *start* and *end* in order to meet those requirements.
+       1. All reservations start at least the next day of booking.
+       2. The stay can’t be longer than 3 days and can’t be reserved more than 30 days in advance.
+       3. To access to the endpoints you require authentication. Take a look to the "Authenticate an user" method once you import the collection into Postman.
+
+
+   <br />
+   <img src="images/postman-createbooking.jpg" alt="Logo" width="900" >
 
  
 <p align="right">(<a href="#top">back to top</a>)</p>
