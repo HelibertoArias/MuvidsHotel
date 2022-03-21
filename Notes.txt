@@ -1,4 +1,0 @@
-Add-Migration InitialCreate -Context MuvidsDbContext
-Add-Migration ChangePropertyRatingInMovie -Context MuvidsDbContext
-
-Update-Database -Context MuvidsDbContext

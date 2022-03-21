@@ -21,7 +21,10 @@ public class UpdateCommandHandler : IRequestHandler<UpdateBookingCommand, Update
     public async Task<UpdateBookingCommandResponse> Handle(UpdateBookingCommand request, CancellationToken cancellationToken)
     {
         var bookingToUpdate = await _bookingRepository.GetByIdAsync(request.Id);
-        if (bookingToUpdate == null)
+
+       
+
+        if (bookingToUpdate == null || bookingToUpdate.IsDeleted )
         {
             throw new NotFoundException(nameof(Booking), request.Id);
         }
