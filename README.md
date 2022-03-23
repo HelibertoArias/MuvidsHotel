@@ -89,7 +89,7 @@ _To start using the application you should._
 
 1. Clone the repo.
    ```sh
-   git clone https://github.com/helibertoarias/Muvids.git
+   git clone https://github.com/helibertoarias/MuvidsHotel.git
    ```
 2. Open the solution MuvidsHotel.sln and build to restore the Nuget Packages.
 3. Set the project Muvids.Web.API as startup project.
@@ -137,7 +137,7 @@ Here some screenshots.
 
    - Notes: By default, only one room was created, the id for it is "c9d4c053-49b6-410c-bc78-2d54a9991850". This roomId will be required to add a new booking. Be aware that you will need to update the fields *start* and *end* in order to meet those requirements.
        1. All reservations start at least the next day of booking.
-       2. The stay can’t be longer than 3 days and can’t be reserved more than 30 days in advance.
+       2. The stay canâ€™t be longer than 3 days and canâ€™t be reserved more than 30 days in advance.
        3. To access to the endpoints you require authentication. Take a look to the "Authenticate an user" method once you import the collection into Postman.
 
 
